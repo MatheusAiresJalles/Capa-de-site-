@@ -18,7 +18,7 @@
 
 /* === ESTILOS GERAIS === */
 body {
-    font-family: 'mokoto','Arial', sans-serif; /* Fonte principal, fallback para Arial e sans-serif */
+    font-family: 'Montserrat', Arial, sans-serif;
     margin: 0;                                /* Remove margem padrão */
     padding: 0;                               /* Remove padding padrão */
     background-color: var(--bg-light);        /* Cor de fundo */
@@ -58,6 +58,7 @@ header {
     text-shadow: 0 4px 8px rgba(0,0,0,0.2);   /* Sombra no texto */
     -webkit-text-stroke: 0.1px #fff;            /* Contorno branco (Webkit) */
     text-shadow: 1px #fff;                    /* Contorno branco (padrão, pouco suportado) */
+    font-family: 'Montserrat', Arial, sans-serif; /* Fonte do título */
 }
 
 /* === DESTAQUE NO TÍTULO === */
@@ -68,6 +69,7 @@ header {
     background-clip: text;           /* Recorta o gradiente no texto (padrão) */
     color: transparent;              /* Torna o texto transparente para mostrar o gradiente */
     font-weight: bold;               /* Opcional: deixa o texto em negrito */
+    font-family: 'Montserrat', Arial, sans-serif; /* Fonte do destaque */
 }
 
 /* === ANIMAÇÃO DE FLUTUAÇÃO === */
@@ -86,7 +88,7 @@ header {
     margin-top: 1rem;                         /* Espaço acima */
     opacity: 0.9;                             /* Opacidade */
     animation: fadeIn 2s ease-out;            /* Animação de fade-in */
-    font-family: Arial, 'sans-serif';         /* Fonte do subtítulo */
+    font-family: 'Montserrat', Arial, sans-serif; /* Fonte do subtítulo */
 }
 
 /* === ANIMAÇÃO DE FADE-IN === */
@@ -107,7 +109,7 @@ header {
     margin-top: 1rem;                         /* Espaço acima */
     transition: all 0.3s ease;                /* Transição suave */
     animation: pulse 2s infinite;             /* Animação de pulsar */
-    font-family: Trebuchet, 'Lucida Sans Unicode', Lucida Grande, Lucida Sans, Arial, sans-serif,'sans-serif'; /* Fonte do botão */
+    font-family: 'Montserrat', Arial, sans-serif; /* Fonte do botão */
 }
 
 /* === ANIMAÇÃO DE PULSO NO BOTÃO === */
@@ -160,7 +162,7 @@ body::before {
 
 /* === LOGO NO HEADER === */
 header .logo {
-    font-family: mokoto, 'Arial', sans-serif; /* Fonte da logo */
+    font-family: 'Montserrat', Arial, sans-serif; /* Fonte da logo */
     font-size: 1.5rem;                        /* Tamanho da logo */
     font-weight: bold;                        /* Negrito */
     color: #fff;                              /* Cor branca */
