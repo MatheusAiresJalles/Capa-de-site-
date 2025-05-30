@@ -1,0 +1,167 @@
+/* === FONTE PERSONALIZADA === */
+@font-face {
+    font-family: 'mokoto'; /* Nome da fonte personalizada */
+    src: url('MokotoDemo.ttf') format('truetype'); /* Caminho e formato do arquivo da fonte */
+    font-weight: normal; /* Peso padrão */
+    font-style: normal;  /* Estilo padrão */
+}
+
+/* === VARIÁVEIS === */
+:root {
+    --primary-color: #000000;      /* Cor primária */
+    --secondary-color: #65ff2d;    /* Cor secundária */
+    --accent-color: #000000;       /* Cor de destaque */
+    --text-light: #ffffff;         /* Cor de texto claro */
+    --text-dark: #333333;          /* Cor de texto escuro */
+    --bg-light: #f5f5f5;           /* Cor de fundo clara */
+}
+
+/* === ESTILOS GERAIS === */
+body {
+    font-family: 'mokoto','Arial', sans-serif; /* Fonte principal, fallback para Arial e sans-serif */
+    margin: 0;                                /* Remove margem padrão */
+    padding: 0;                               /* Remove padding padrão */
+    background-color: var(--bg-light);        /* Cor de fundo */
+    color: var(--text-dark);                  /* Cor do texto */
+}
+
+/* === HEADER === */
+header {
+    background:transparent;                   /* Fundo transparente */
+    color: var(--text-light);                 /* Cor do texto no header */
+    padding: 0;                               /* Sem padding */
+    text-align: center;                       /* Centraliza o texto */
+    position: relative;                       /* Para posicionamento absoluto dos filhos */
+    overflow: hidden;                         /* Esconde overflow */
+    min-height: 100vh;                        /* Ocupa toda a altura da tela */
+    display: flex;                            /* Usa flexbox */
+    flex-direction: column;                   /* Direção da coluna */
+    justify-content: center;                  /* Centraliza verticalmente */
+    align-items: center;                      /* Centraliza horizontalmente */
+}
+
+/* === CONTEÚDO DO HEADER === */
+.header-content {
+    position: relative;                       /* Posição relativa para z-index */
+    width: 100%;                              /* Ocupa toda a largura */
+    height: 100%;                             /* Ocupa toda a altura */
+    z-index: 1;                               /* Fica acima do background/partículas */
+}
+
+/* === TÍTULO ANIMADO === */
+.animated-title {
+    font-size: 6.5rem;                        /* Tamanho grande */
+    font-weight: 700;                         /* Negrito */
+    margin: 0;                                /* Sem margem */
+    display: inline-block;                    /* Exibe como bloco inline */
+    animation: floating 2s ease-in-out infinite; /* Animação de flutuação */
+    text-shadow: 0 4px 8px rgba(0,0,0,0.2);   /* Sombra no texto */
+    -webkit-text-stroke: 0.1px #fff;            /* Contorno branco (Webkit) */
+    text-shadow: 1px #fff;                    /* Contorno branco (padrão, pouco suportado) */
+}
+
+/* === DESTAQUE NO TÍTULO === */
+.highlight {
+    background: linear-gradient(90deg, #65ff2d, #000000); /* Gradiente desejado */
+    -webkit-background-clip: text;   /* Recorta o gradiente no texto (Webkit) */
+    -webkit-text-fill-color: transparent; /* Preenche o texto com o gradiente (Webkit) */
+    background-clip: text;           /* Recorta o gradiente no texto (padrão) */
+    color: transparent;              /* Torna o texto transparente para mostrar o gradiente */
+    font-weight: bold;               /* Opcional: deixa o texto em negrito */
+}
+
+/* === ANIMAÇÃO DE FLUTUAÇÃO === */
+@keyframes floating {
+    0%, 100% { 
+        transform: translateY(0) rotate(-1deg); /* Posição inicial/final */
+    }
+    50% { 
+        transform: translateY(-15px) rotate(1deg); /* Posição intermediária */
+    }
+}
+
+/* === SUBTÍTULO === */
+.subtitle {
+    font-size: 3.0rem;                        /* Tamanho do subtítulo */
+    margin-top: 1rem;                         /* Espaço acima */
+    opacity: 0.9;                             /* Opacidade */
+    animation: fadeIn 2s ease-out;            /* Animação de fade-in */
+    font-family: Arial, 'sans-serif';         /* Fonte do subtítulo */
+}
+
+/* === ANIMAÇÃO DE FADE-IN === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); } /* Começa invisível e abaixo */
+    to { opacity: 0.9; transform: translateY(0); }    /* Termina visível e na posição */
+}
+
+/* === BOTÃO PRINCIPAL === */
+.btn-primary {
+    background-color: var(--accent-color);    /* Cor de fundo do botão */
+    color: var(--text-light);                 /* Cor do texto */
+    padding: 40px 60px;                       /* Espaçamento interno */
+    border-radius: 70px;                      /* Bordas arredondadas */
+    text-decoration: none;                    /* Remove sublinhado */
+    font-weight: bold;                        /* Texto em negrito */
+    display: inline-block;                    /* Exibe como bloco inline */
+    margin-top: 1rem;                         /* Espaço acima */
+    transition: all 0.3s ease;                /* Transição suave */
+    animation: pulse 2s infinite;             /* Animação de pulsar */
+    font-family: Trebuchet, 'Lucida Sans Unicode', Lucida Grande, Lucida Sans, Arial, sans-serif,'sans-serif'; /* Fonte do botão */
+}
+
+/* === ANIMAÇÃO DE PULSO NO BOTÃO === */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* === EFEITO HOVER NO BOTÃO === */
+.btn-primary:hover {
+    background-color: #61ff52;                /* Cor ao passar o mouse */
+    transform: translateY(-3px);              /* Sobe levemente */
+    box-shadow: 0 10px 20px rgba(255,107,107,0.3); /* Sombra */
+}
+
+/* === PARTÍCULAS === */
+.particles {
+    position: absolute;                       /* Posição absoluta */
+    top: 0; left: 0;                          /* Começa no topo/esquerda */
+    width: 100%; height: 100%;                /* Ocupa toda a área */
+    z-index: 0;                               /* Fica atrás do conteúdo */
+}
+
+/* === BACKGROUND ANIMADO === */
+body::before {
+    content: "";                              /* Elemento vazio */
+    position: fixed;                          /* Fixa na tela */
+    top: 0; left: 0; right: 0; bottom: 0;     /* Ocupa toda a tela */
+    z-index: -1;                              /* Fica atrás de tudo */
+    background: linear-gradient(270deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color)); /* Gradiente animado */
+    background-size: 600% 600%;               /* Tamanho do gradiente */
+    animation: gradientMove 16s ease infinite;/* Animação do gradiente */
+    opacity: 0.5;                             /* Opacidade do fundo */
+}
+
+/* === ANIMAÇÃO DO GRADIENTE === */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+.content {
+    max-width: 1200px;                        /* Largura máxima */
+    margin: 2rem auto;                        /* Centraliza e espaça */
+    padding: 0 1rem;                          /* Espaçamento lateral */
+}
+
+/* === LOGO NO HEADER === */
+header .logo {
+    font-family: mokoto, 'Arial', sans-serif; /* Fonte da logo */
+    font-size: 1.5rem;                        /* Tamanho da logo */
+    font-weight: bold;                        /* Negrito */
+    color: #fff;                              /* Cor branca */
+}
